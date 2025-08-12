@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import NewsFeed from './pages/NewsFeed';
 import Bookmarks from './pages/Bookmarks';
 import { AuthProvider, useAuth } from './utils/auth';
+import ProfilePage from './pages/UserProfile';
 
 function PrivateRoute({ children }){
   const { token } = useAuth();
@@ -17,7 +18,8 @@ export default function App(){
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login/>} />
-          <Route path="/signup" element={<Signup/>} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<ProfilePage/>} />
           <Route path="/" element={<PrivateRoute><NewsFeed/></PrivateRoute>} />
           <Route path="/bookmarks" element={<PrivateRoute><Bookmarks/></PrivateRoute>} />
         </Routes>
