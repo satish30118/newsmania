@@ -155,19 +155,19 @@ export default function ProfilePage() {
             <div className="pt-20 px-6 pb-8">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h1 className="text-3xl font-bold">{userData.name || 'Anonymous User'}</h1>
+                  <h1 className="text-3xl font-bold">{userData.username || 'Anonymous User'}</h1>
                   <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{userData.email}</p>
                 </div>
                 <button 
-                  onClick={() => navigate('/profile/edit')}
+                  onClick={() => navigate('/')}
                   className={`px-4 py-2 rounded-lg font-medium ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'}`}
                 >
-                  Edit Profile
+                  Go to Home
                 </button>
               </div>
 
               {/* Stats */}
-              <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+              {/* <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
                 <div className="text-center">
                   <div className="text-2xl font-bold">42</div>
                   <div className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Bookmarks</div>
@@ -184,7 +184,7 @@ export default function ProfilePage() {
                   <div className="text-2xl font-bold">{formatDate(userData.createdAt)}</div>
                   <div className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Member Since</div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Details */}
               <div className="space-y-6">

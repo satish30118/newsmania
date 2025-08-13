@@ -10,6 +10,7 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const nav = useNavigate();
+  const BACKEND = process.env.REACT_APP_BACKEND;
 
   const submit = async (e) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ export default function Signup() {
     setError('');
     
     try {
-      await axios.post(`http://localhost:5001/api/auth/signup`, { 
+      await axios.post(`${BACKEND}/api/auth/signup`, { 
         username, 
         email, 
         password 
